@@ -141,6 +141,7 @@ function Kavo:ToggleUI()
 end
 
 function Kavo.CreateLib(kavName, themeList)
+    LibName = kavName
     if game.CoreGui:FindFirstChild(kavName) then
         game.CoreGui[kavName]:Destroy()
     end
