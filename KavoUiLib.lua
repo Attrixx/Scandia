@@ -143,7 +143,7 @@ end
 function Kavo.CreateLib(kavName, themeList)
     LibName = kavName
     if game.CoreGui:FindFirstChild(kavName) then
-        game.CoreGui[kavName]:Destroy()
+       game.CoreGui[kavName]:Destroy()         
     end
     if not themeList then
         themeList = themes
@@ -1188,12 +1188,13 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                     return TogFunction
             end
- 
+
             function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, callback)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
                 maxvalue = maxvalue or 500
                 minvalue = minvalue or 16
+                startVal = startVal or 0
                 callback = callback or function() end
 
                 local sliderElement = Instance.new("TextButton")
