@@ -1189,12 +1189,11 @@ function Kavo.CreateLib(kavName, themeList)
                     return TogFunction
             end
  
-            function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, startVal, callback)
+            function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, callback)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
                 maxvalue = maxvalue or 500
                 minvalue = minvalue or 16
-                startVal = startVal or 0
                 callback = callback or function() end
 
                 local sliderElement = Instance.new("TextButton")
@@ -1264,12 +1263,6 @@ function Kavo.CreateLib(kavName, themeList)
                 UIListLayout.Parent = sliderBtn
                 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
                 UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
-
-                local startVal2 = startVal - minvalue
-                print("Start: " .. tostring(startVal2))
-                print("Max: " .. tostring(maxvalue))
-                print("Min: " .. tostring(minvalue))
-                print(tostring(startVal2 / maxvalue))
 
                 sliderDrag.Name = "sliderDrag"
                 sliderDrag.Parent = sliderBtn
