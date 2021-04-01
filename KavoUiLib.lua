@@ -1190,6 +1190,10 @@ function Kavo.CreateLib(kavName, themeList)
             end
 
             function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, startVal, callback)
+                print(startVal)
+                print(minvalue)
+                print(maxvalue)
+                print(startVal - minvalue / maxvalue)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
                 maxvalue = maxvalue or 500
@@ -1270,10 +1274,6 @@ function Kavo.CreateLib(kavName, themeList)
                 sliderDrag.BackgroundColor3 = themeList.SchemeColor
                 sliderDrag.BorderColor3 = Color3.fromRGB(74, 99, 135)
                 sliderDrag.BorderSizePixel = 0
-                print(startVal)
-                print(minvalue)
-                print(maxvalue)
-                print(startVal - minvalue / maxvalue)
                 sliderDrag.Size = UDim2.new(startVal - minvalue / maxvalue, 100,1,0)
 
                 UICorner_3.Parent = sliderDrag
