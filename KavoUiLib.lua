@@ -1188,14 +1188,8 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                     return TogFunction
             end
-            start = 32
-            min = 16
-            max = 64
+ 
             function Elements:NewSlider(slidInf, slidTip, maxvalue, minvalue, startVal, callback)
-                print(startVal)
-                print(minvalue)
-                print(maxvalue)
-                print(startVal - minvalue * maxvalue)
                 slidInf = slidInf or "Slider"
                 slidTip = slidTip or "Slider tip here"
                 maxvalue = maxvalue or 500
@@ -1271,14 +1265,18 @@ function Kavo.CreateLib(kavName, themeList)
                 UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
                 UIListLayout.VerticalAlignment = Enum.VerticalAlignment.Center
 
-                local startv = startVal - minvalue
+                local startVal2 = startVal - minvalue
+                print("Start: " .. tostring(startVal2))
+                print("Max: " .. tostring(maxvalue))
+                print("Min: " .. tostring(minvalue))
+                print(tostring(startVal2 / maxvalue))
 
                 sliderDrag.Name = "sliderDrag"
                 sliderDrag.Parent = sliderBtn
                 sliderDrag.BackgroundColor3 = themeList.SchemeColor
                 sliderDrag.BorderColor3 = Color3.fromRGB(74, 99, 135)
                 sliderDrag.BorderSizePixel = 0
-                sliderDrag.Size = UDim2.new(startv / maxvalue, 100,1,0)
+                sliderDrag.Size = UDim2.new(startVal2 / maxvalue, 100,1,0)
 
                 UICorner_3.Parent = sliderDrag
 
