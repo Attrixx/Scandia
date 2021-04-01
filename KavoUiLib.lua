@@ -1269,7 +1269,7 @@ function Kavo.CreateLib(kavName, themeList)
                 sliderDrag.BackgroundColor3 = themeList.SchemeColor
                 sliderDrag.BorderColor3 = Color3.fromRGB(74, 99, 135)
                 sliderDrag.BorderSizePixel = 0
-                sliderDrag.Size = UDim2.new(startVal2 / maxvalue, 100,1,0)
+                sliderDrag.Size = UDim2.new(-0.671140969, 100,1,0)
 
                 UICorner_3.Parent = sliderDrag
 
