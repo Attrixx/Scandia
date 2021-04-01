@@ -1365,7 +1365,7 @@ function Kavo.CreateLib(kavName, themeList)
                     end
                 end)()
 
-                local Value = startVal
+                local Value
                 sliderBtn.MouseButton1Down:Connect(function()
                     if not focusing then
                         game.TweenService:Create(val, TweenInfo.new(0.1, Enum.EasingStyle.Linear, Enum.EasingDirection.In), {
