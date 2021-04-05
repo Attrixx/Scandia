@@ -143,7 +143,10 @@ end
 function Kavo.CreateLib(kavName, themeList)
     LibName = kavName
     if game.CoreGui:FindFirstChild(kavName) then
-       game.CoreGui[kavName]:Destroy()         
+       game.CoreGui[kavName]:Destroy()
+       getgenv().disabled = true
+       wait(0.1)
+       getgenv().disabled = false
     end
     if not themeList then
         themeList = themes
