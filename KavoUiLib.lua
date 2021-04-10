@@ -2085,6 +2085,11 @@ function Kavo.CreateLib(kavName, themeList)
 
                     end
                 end)()
+                local sub = {}
+                function sub:getKey()
+                   return oldKey              
+                end
+                return sub
             end
 
             function Elements:NewSelection(selText, selInf, list, callback)
