@@ -1328,7 +1328,8 @@ function Kavo.CreateLib(kavName, themeList)
                 end 
 
 
-                updateSectionFrame()
+                                updateSectionFrame()
+                UpdateSize()
                 local mouse = game:GetService("Players").LocalPlayer:GetMouse();
 
                 local ms = game.Players.LocalPlayer:GetMouse()
@@ -1379,14 +1380,14 @@ function Kavo.CreateLib(kavName, themeList)
                         pcall(function()
                             callback(Value)
                         end)
-                        game:GetService("TweenService"):Create(sliderDrag, TweenInfo.new(0.05, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Position = UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6)})
+                        sliderDrag:TweenSize(UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6), "InOut", "Linear", 0.05, true)
                         moveconnection = mouse.Move:Connect(function()
                             val.Text = Value
                             Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 149) * sliderDrag.AbsoluteSize.X) + tonumber(minvalue))
                             pcall(function()
                                 callback(Value)
                             end)
-                            sliderDrag:TweenSize(UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6), Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0.05, true)
+                            sliderDrag:TweenSize(UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6), "InOut", "Linear", 0.05, true)
                         end)
                         releaseconnection = uis.InputEnded:Connect(function(Mouse)
                             if Mouse.UserInputType == Enum.UserInputType.MouseButton1 then
