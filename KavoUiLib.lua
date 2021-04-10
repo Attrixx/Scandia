@@ -1865,12 +1865,12 @@ function Kavo.CreateLib(kavName, themeList)
                         end)()
                     end
                     if opened then 
-                        game:GetService("TweenService"):Create(dropFrame, TweenInfo.new("InOut", "Linear", 0.08, true), {Size = UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y)}):Play()
+                        game:GetService("TweenService"):Create(dropFrame, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, true), {Size = UDim2.new(0, 352, 0, UIListLayout.AbsoluteContentSize.Y)}):Play()
                         wait(0.1)
                         updateSectionFrame()
                         UpdateSize()
                     else
-                        game:GetService("TweenService"):Create(dropFrame, TweenInfo.new(0.08, "InOut", "Linear"), {Size = UDim2.new(0, 352, 0, 33)}):Play()
+                        game:GetService("TweenService"):Create(dropFrame, TweenInfo.new(0.08, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut), {Size = UDim2.new(0, 352, 0, 33)}):Play()
                         wait(0.1)
                         updateSectionFrame()
                         UpdateSize()
