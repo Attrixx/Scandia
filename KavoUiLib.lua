@@ -1379,7 +1379,7 @@ function Kavo.CreateLib(kavName, themeList)
                         pcall(function()
                             callback(Value)
                         end)
-                        sliderDrag:TweenSize(UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6), Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, 0.05, true)
+                        game:GetService("TweenService"):Create(sliderDrag, TweenInfo.new(0.05, Enum.EasingStyle.Linear, Enum.EasingDirection.InOut, true), {Position = UDim2.new(0, math.clamp(mouse.X - sliderDrag.AbsolutePosition.X, 0, 149), 0, 6)})
                         moveconnection = mouse.Move:Connect(function()
                             val.Text = Value
                             Value = math.floor((((tonumber(maxvalue) - tonumber(minvalue)) / 149) * sliderDrag.AbsoluteSize.X) + tonumber(minvalue))
