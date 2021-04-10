@@ -2556,7 +2556,7 @@ function Kavo.CreateLib(kavName, themeList)
                 end)
                 setcolor({h,s,v})
                 local sub = {}
-                function sub:Destroy()
+                function sub:Remove()
                    colorElement:Destroy()
                 end
                 return sub
